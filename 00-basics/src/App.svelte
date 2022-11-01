@@ -1,10 +1,8 @@
 <script>
-
+    let name = 'world';
 </script>
 
-<main>
-
-</main>
+<h1>Hello {name}!</h1>
 
 <style>
 
