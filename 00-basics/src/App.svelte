@@ -8,9 +8,20 @@
     let count = 0;
     $: doubled = count * 2;
 
+    $: if (count >= 10) {
+        alert('count is dangerously high!');
+        count = 9;
+    }
+
     function incrementCount() {
         count += 1;
     }
+
+    // $: console.log('the count is ' + count);
+    // $: {
+    //     console.log('the count is ' + count);
+    //     alert('I SAID THE COUNT IS ' + count);
+    // }
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
