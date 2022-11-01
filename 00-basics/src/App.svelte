@@ -1,6 +1,8 @@
 <script>
     import Nested from "./components/Nested.svelte";
     import Info from "./components/Info.svelte";
+    import Thing from "./components/Thing.svelte";
+
     let src = 'https://svelte.dev/tutorial/image.gif';
     let name = 'Rick Astley';
 
@@ -53,6 +55,18 @@
         { id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
     ];
 
+    let things = [
+        { id: 1, name: 'apple' },
+        { id: 2, name: 'banana' },
+        { id: 3, name: 'carrot' },
+        { id: 4, name: 'doughnut' },
+        { id: 5, name: 'egg' },
+    ];
+
+    function handleClick() {
+        things = things.slice(1);
+    }
+
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
@@ -97,6 +111,14 @@
         </a></li>
     {/each}
 </ul>
+
+<button on:click={handleClick}>
+    Remove first thing
+</button>
+
+{#each things as thing(thing.id)}
+    <Thing name={thing.name}/>
+{/each}
 
 <style>
     img {
