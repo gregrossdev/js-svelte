@@ -1,5 +1,6 @@
 <script>
     import Nested from "./components/Nested.svelte";
+    import Info from "./components/Info.svelte";
     let src = 'https://svelte.dev/tutorial/image.gif';
     let name = 'Rick Astley';
 
@@ -31,6 +32,13 @@
 
     $: sum = numbers.reduce((t, n) => t + n, 0);
 
+    const pkg = {
+        name: 'svelte',
+        version: 3,
+        speed: 'blazing',
+        website: 'https://svelte.dev'
+    };
+
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
@@ -46,7 +54,7 @@
 
 <Nested />
 <Nested answer={42}/>
-
+<Info {...pkg}/>
 
 <style>
     img {
