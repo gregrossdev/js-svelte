@@ -39,6 +39,12 @@
         website: 'https://svelte.dev'
     };
 
+    let user = { loggedIn: false };
+
+    function toggle() {
+        user.loggedIn = !user.loggedIn;
+    }
+
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
@@ -55,6 +61,18 @@
 <Nested />
 <Nested answer={42}/>
 <Info {...pkg}/>
+
+{#if user.loggedIn}
+    <button on:click={toggle}>
+        Log out
+    </button>
+{/if}
+
+{#if !user.loggedIn}
+    <button on:click={toggle}>
+        Log in
+    </button>
+{/if}
 
 <style>
     img {
