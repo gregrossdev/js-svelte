@@ -34,7 +34,7 @@
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
-<Nested />
+<Nested answer={42}/>
 <p>{@html string}</p>
 <button on:click={incrementCount}>
     Clicked {count} {count === 1 ? 'time' : 'times'}
