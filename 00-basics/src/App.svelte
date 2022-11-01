@@ -1,9 +1,6 @@
 <script>
-    let name = 'world';
+    let src = 'https://svelte.dev/tutorial/image.gif';
+    let name = 'Rick Astley';
 </script>
 
-<h1>Hello {name.toUpperCase()}!</h1>
-
-<style>
-
-</style>
+<img {src} alt="{name} dances.">
