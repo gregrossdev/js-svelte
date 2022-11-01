@@ -34,17 +34,19 @@
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
-<Nested answer={42}/>
 <p>{@html string}</p>
 <button on:click={incrementCount}>
     Clicked {count} {count === 1 ? 'time' : 'times'}
 </button>
 <p>{count} doubled is {doubled}</p>
 <p>{numbers.join(' + ')} = {sum}</p>
-
 <button on:click={addNumber}>
     Add a number
 </button>
+
+<Nested />
+<Nested answer={42}/>
+
 
 <style>
     img {
