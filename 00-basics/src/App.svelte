@@ -4,3 +4,9 @@
 </script>
 
 <img {src} alt="{name} dances.">
+
+<style>
+    img {
+        width: 100%;
+    }
+</style>
