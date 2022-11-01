@@ -67,6 +67,23 @@
         things = things.slice(1);
     }
 
+    async function getRandomNumber() {
+        const res = await fetch(`https://svelte.dev/tutorial/random-number`);
+        const text = await res.text();
+
+        if (res.ok) {
+            return text;
+        } else {
+            throw new Error(text);
+        }
+    }
+
+    let promise = getRandomNumber();
+
+    function handleClickRandom() {
+        promise = getRandomNumber();
+    }
+
 </script>
 
 <!--<img {src} alt="{name} dances.">-->
@@ -119,6 +136,18 @@
 {#each things as thing(thing.id)}
     <Thing name={thing.name}/>
 {/each}
+
+<button on:click={handleClickRandom}>
+    generate random number
+</button>
+
+{#await promise}
+    <p>...waiting</p>
+{:then number}
+    <p>The number is {number}</p>
+{:catch error}
+    <p style="color: red">{error.message}</p>
+{/await}
 
 <style>
     img {
