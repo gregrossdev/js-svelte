@@ -2,6 +2,7 @@
     import Nested from "./components/Nested.svelte";
     import Info from "./components/Info.svelte";
     import Thing from "./components/Thing.svelte";
+    import Events from "./Events.svelte";
 
     let src = 'https://svelte.dev/tutorial/image.gif';
     let name = 'Rick Astley';
@@ -148,6 +149,8 @@
 {:catch error}
     <p style="color: red">{error.message}</p>
 {/await}
+
+<Events />
 
 <style>
     img {
