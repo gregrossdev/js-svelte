@@ -1,6 +1,7 @@
 <script>
     import Inner from "./components/events/Inner.svelte";
     import Outer from "./components/events/Outer.svelte";
+    import CustomButton from "./components/events/CustomButton.svelte";
 
     let m = { x: 0, y: 0 };
 
@@ -15,6 +16,10 @@
 
     function handleMessage(event) {
         alert(event.detail.text);
+    }
+
+    function handleClickButton() {
+        alert('Button Clicked');
     }
 </script>
 
@@ -36,6 +41,9 @@
 
     <h3>Forward Dispatch Events</h3>
     <Outer on:message={handleMessage}/>
+
+    <h3>Forward DOM Events</h3>
+    <CustomButton on:click={handleClickButton}/>
 
 
 </section>
