@@ -1,4 +1,6 @@
 <script>
+    import Inner from "./components/events/Inner.svelte";
+
     let m = { x: 0, y: 0 };
 
     function handleMousemove(event) {
@@ -8,6 +10,10 @@
 
     function handleClick() {
         alert('no more alerts')
+    }
+
+    function handleMessage(event) {
+        alert(event.detail.text);
     }
 </script>
 
@@ -23,6 +29,11 @@
     <button on:click|once={handleClick}>
         Click me
     </button>
+
+    <h3>Dispatch Events</h3>
+    <Inner on:message={handleMessage}/>
+
+
 </section>
 
 
