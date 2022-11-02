@@ -150,6 +150,7 @@
     <p style="color: red">{error.message}</p>
 {/await}
 
+<h2>Events</h2>
 <Events />
 
 <style>
